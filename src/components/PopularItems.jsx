@@ -31,14 +31,14 @@ export default function PopularItems() {
   return (
     <section
       id="popular-items"
-      className="bg-bg-surface flex flex-col gap-12 items-center px-30 py-16"
+      className="bg-bg-surface flex flex-col gap-12 items-center px-4 py-12 lg:px-30 lg:py-16"
     >
       {/* Header */}
       <div className="flex items-center justify-between w-full">
-        <h2 className="text-heading-md leading-[48px] tracking-[-0.01em] text-text-primary">
+        <h2 className="text-heading-sm lg:text-heading-md text-text-primary">
           Popular Items
         </h2>
-        <div className="flex items-center justify-center size-[72px] rounded-full border-[1.5px] border-border-primary">
+        <div className="flex items-center justify-center size-[56px] lg:size-[72px] rounded-full border-[1.5px] border-border-primary">
           <ShoppingBasket size={32} className="text-icon-primary" />
         </div>
       </div>
@@ -56,14 +56,25 @@ export default function PopularItems() {
       {/* Carousel */}
       {!loading && !error && products.length > 0 && (
         <div className="flex flex-col gap-12 items-center w-full">
-          <div className="flex items-center justify-between w-full">
+
+          {/* Mobile: horizontal scroll through all products */}
+          <div className="flex lg:hidden gap-4 overflow-x-auto w-full pb-2 -mx-4 px-4 snap-x snap-mandatory">
+            {products.map((product) => (
+              <div key={product.id} className="snap-start shrink-0">
+                <ProductCard {...product} />
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: paginated carousel */}
+          <div className="hidden lg:flex items-center gap-20 w-full">
             {visible.map((product) => (
               <ProductCard key={product.id} {...product} />
             ))}
           </div>
 
-          {/* Prev / Next */}
-          <div className="flex items-center gap-3">
+          {/* Prev / Next — desktop only */}
+          <div className="hidden lg:flex items-center gap-3">
             <button
               onClick={() => setStartIndex((i) => i - 1)}
               disabled={!canPrev}

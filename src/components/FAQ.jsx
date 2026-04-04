@@ -35,15 +35,15 @@ export default function FAQ() {
   return (
     <section
       id="faqs"
-      className="bg-bg-surface flex flex-row justify-center px-8 py-20"
+      className="bg-bg-surface flex flex-col items-center px-4 py-12 lg:px-8 lg:py-20"
     >
 
-      <div className="flex flex-row justify-between max-w-[1300]">
+      <div className="flex flex-col lg:flex-row justify-between w-full max-w-[1300px] gap-10 lg:gap-12">
 
         {/* Left — heading + subtitle + CTA */}
-      <div className="flex flex-col flex-1 gap-8 items-start sticky top-24 max-w-[460px]">
+      <div className="flex flex-col gap-8 items-start w-full lg:flex-1 lg:sticky lg:top-24 lg:max-w-[460px]">
         <div className="flex flex-col gap-2">
-          <h2 className="text-heading-md leading-[48px] tracking-[-0.01em] text-text-primary mb-2">
+          <h2 className="text-heading-sm lg:text-heading-md text-text-primary mb-2">
             Frequently
             <br />
             Asked Questions
@@ -80,6 +80,7 @@ export default function FAQ() {
             question={faq.question}
             answer={faq.answer}
             defaultOpen={i === 0}
+            className={i === FAQS.length - 1 ? 'border-b-0' : ''}
           />
         ))}
       </div>

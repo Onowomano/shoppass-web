@@ -163,52 +163,70 @@
   font-family: "Unbounded", sans-serif;
   font-size: 56px;
   font-weight: 500;
+  line-height: 60px;
+  letter-spacing: -0.02em;
 }
 
 @utility text-heading-md {
   font-family: "Unbounded", sans-serif;
   font-size: 40px;
   font-weight: 500;
+  line-height: 48px;
+  letter-spacing: -0.01em;
 }
 
 @utility text-heading-sm {
   font-family: "Unbounded", sans-serif;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 500;
+  line-height: 36px;
+  letter-spacing: -0.01em;
 }
 
 @utility text-heading-xs {
   font-family: "Unbounded", sans-serif;
   font-size: 24px;
   font-weight: 500;
+  line-height: 30px;
+  letter-spacing: -0.01em;
 }
 
 @utility text-sub-heading {
   font-family: "Inter", sans-serif;
   font-size: 18px;
   font-weight: 600;
+  line-height: 24px;
+  letter-spacing: -0.01em;
 }
 
 @utility text-body-lg {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.01em;
 }
 
 @utility text-body-lg-bold {
   font-family: "Inter", sans-serif;
   font-size: 16px;
   font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.01em;
 }
 
 @utility text-body-md {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 400;
+  line-height: 20px;
+  letter-spacing: -0.01em;
 }
 
 @utility text-body-md-bold {
   font-family: "Inter", sans-serif;
   font-size: 14px;
   font-weight: 500;
+  line-height: 20px;
+  letter-spacing: -0.01em;
 }

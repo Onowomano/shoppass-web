@@ -24,12 +24,12 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="bg-bg-accent-blue-light flex flex-col gap-10 items-start px-30 py-25">
-      <h2 className="text-heading-md leading-[48px] tracking-[-0.01em] text-text-primary w-full">
+    <section id="how-it-works" className="bg-bg-accent-blue-light flex flex-col gap-10 items-start px-4 py-12 lg:px-30 lg:py-25">
+      <h2 className="text-heading-sm lg:text-heading-md text-text-primary w-full">
         How This Works
       </h2>
 
-      <div className="flex gap-6 w-full">
+      <div className="flex flex-col lg:flex-row gap-6 w-full">
         {STEPS.map(step => (
           <HIWCard key={step.title} {...step} />
         ))}

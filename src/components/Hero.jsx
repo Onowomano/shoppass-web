@@ -1,4 +1,4 @@
-import { ArrowUpRight } from 'lucide-react'
+
 import Button from './Button'
 import WhatsAppIcon from './WhatsAppIcon'
 
@@ -18,14 +18,14 @@ export default function Hero() {
       </div>
 
       {/* Centre content */}
-      <div className="relative z-10 flex flex-col gap-10 items-center text-center max-w-[475px] w-full px-6">
+      <div className="relative z-10 flex flex-col gap-10 items-center text-center max-w-[500px] w-full px-6">
 
         {/* Heading + subtext */}
         <div className="flex flex-col gap-3 text-white w-full">
-          <h1 className="text-heading-lg leading-[60px] tracking-[-0.02em]">
+          <h1 className="text-heading-md lg:text-heading-lg">
             Let's Go To<br />The Market For You
           </h1>
-          <p className="text-body-lg-bold leading-6 tracking-[-0.01em]">
+          <p className="text-body-lg-bold">
             Send us your shopping list—we'll head to the market, pick everything
             up, and get it delivered straight to your door.
             <br />No stress, no wasted time.
@@ -37,7 +37,6 @@ export default function Hero() {
           type="White"
           label="Talk to us"
           leftIcon={<WhatsAppIcon size={20} />}
-          rightIcon={<ArrowUpRight size={16} />}
           onClick={() => window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer')}
         />
       </div>

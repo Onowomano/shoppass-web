@@ -29,22 +29,22 @@ const QuoteIcon = (
 
 export default function ReviewCard({ name, review, image, onPrev, onNext, canPrev, canNext }) {
   return (
-    <div className="bg-bg-surface flex items-start justify-between w-full max-w-[1200px] p-10 rounded-[40px]">
+    <div className="bg-bg-surface flex flex-col lg:flex-row items-start justify-between w-full max-w-[1300px] lg:h-[560px] p-6 lg:p-10 rounded-2xl lg:rounded-[40px] gap-8 lg:gap-0">
 
       {/* Left — quote, review text, name, nav */}
-      <div className="flex flex-col justify-between self-stretch w-[453px] shrink-0">
+      <div className="flex flex-col justify-between self-stretch w-full lg:w-[500px] lg:shrink-0">
 
         <div className="flex flex-col gap-8">
           {/* Quote mark */}
           {QuoteIcon}
 
           {/* Review */}
-          <p className="text-heading-sm leading-[42px] tracking-[-0.01em] text-text-primary">
+          <p className="text-heading-sm text-text-primary">
             {review}
           </p>
 
           {/* Name */}
-          <p className="text-sub-heading leading-6 tracking-[-0.01em] text-text-primary">
+          <p className="text-sub-heading text-text-primary">
             {name}
           </p>
         </div>
@@ -77,7 +77,7 @@ export default function ReviewCard({ name, review, image, onPrev, onNext, canPre
       </div>
 
       {/* Right — image */}
-      <div className="size-[480px] rounded-lg overflow-hidden shrink-0">
+      <div className="w-full aspect-square lg:size-[480px] lg:shrink-0 rounded-lg overflow-hidden">
         <img
           src={image}
           alt={`Photo of ${name}`}
