@@ -1,18 +1,39 @@
-
+import { useEffect, useState } from 'react'
 import Button from './Button'
 import WhatsAppIcon from './WhatsAppIcon'
 
 const WHATSAPP_URL = 'http://wa.me/2348080828181'
 
 export default function Hero() {
+  const [imgLoaded, setImgLoaded] = useState(false)
+  const [fontsLoaded, setFontsLoaded] = useState(false)
+  const ready = imgLoaded && fontsLoaded
+
+  useEffect(() => {
+    document.fonts.ready.then(() => setFontsLoaded(true))
+  }, [])
+
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
 
-      {/* Background image + overlays */}
+      {/* Full-screen loader — fades out once the hero image and fonts are ready */}
+      <div
+        aria-hidden="true"
+        className={[
+          'fixed inset-0 z-[100] bg-bg-surface flex items-center justify-center',
+          'transition-opacity duration-500 pointer-events-none',
+          ready ? 'opacity-0' : 'opacity-100',
+        ].join(' ')}
+      >
+        <div className="size-10 rounded-full border-4 border-border-primary border-t-icon-accent-orange animate-spin" />
+      </div>
+
+      {/* Background image */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <img
           src="/market.jpg"
           alt=""
+          onLoad={() => setImgLoaded(true)}
           className="absolute inset-0 size-full object-cover"
         />
       </div>

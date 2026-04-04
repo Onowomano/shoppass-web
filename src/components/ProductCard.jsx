@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 /**
  * @param {{
  *   name: string
@@ -11,16 +13,24 @@
  */
 
 export default function ProductCard({ name, image, variant, price, lastUpdated }) {
+  const [imgLoaded, setImgLoaded] = useState(false)
+
   return (
     <div className="flex flex-col gap-[15px] items-start w-[220px] shrink-0">
 
       {/* Image */}
       <div className="bg-bg-primary h-[220px] w-full rounded-lg overflow-hidden relative shrink-0">
+        {/* Skeleton */}
+        {!imgLoaded && (
+          <div className="absolute inset-0 bg-gray-200 animate-pulse rounded-lg" />
+        )}
         <div className="absolute inset-[10px]">
           <img
             src={image}
             alt={`${variant} of ${name}`}
-            className="size-full object-contain"
+            loading="lazy"
+            onLoad={() => setImgLoaded(true)}
+            className={`size-full object-contain transition-opacity duration-300 ${imgLoaded ? 'opacity-100' : 'opacity-0'}`}
           />
         </div>
       </div>

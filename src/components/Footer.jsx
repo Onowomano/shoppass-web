@@ -58,6 +58,7 @@ export default function Footer() {
             <img
               src="/shoppass-logo.svg"
               alt="Shoppass"
+              loading="lazy"
               className="h-6 w-auto object-contain object-left"
             />
             <p className="text-body-md leading-[22px] text-text-secondary">

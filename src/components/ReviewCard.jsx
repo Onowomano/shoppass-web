@@ -81,6 +81,7 @@ export default function ReviewCard({ name, review, image, onPrev, onNext, canPre
         <img
           src={image}
           alt={`Photo of ${name}`}
+          loading="lazy"
           className="size-full object-cover"
         />
       </div>
