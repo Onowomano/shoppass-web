@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Button from './Button'
 import WhatsAppIcon from './WhatsAppIcon'
+import { FLAT_SERVICE_FEE, MARKET_DAYS, VARIABLE_SERVICE_FEE } from '../config/business'
 
 const WHATSAPP_URL = 'http://wa.me/2348080828181'
 
@@ -104,8 +105,7 @@ export default function Hero() {
 
       {/* Disclaimer */}
       <p className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white text-center text-body-md-bold leading-[22px] tracking-[-0.01em] w-[390px] max-w-[90vw]">
-        *Our service fee ranges from ₦5,000 to ₦10,000, based on how long your
-        shopping list is. Delivery fee is separate.
+       *We shop on {MARKET_DAYS} for a flat service fee of {FLAT_SERVICE_FEE}. If you need us to shop outside those days, a higher service fee applies—{VARIABLE_SERVICE_FEE}, depending on the length of your list. Delivery fees are separate.
       </p>
     </section>
   )

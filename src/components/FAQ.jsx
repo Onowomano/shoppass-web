@@ -1,6 +1,7 @@
 import Button from "./Button";
 import FAQItem from "./FAQItem";
 import WhatsAppIcon from "./WhatsAppIcon";
+import { FLAT_SERVICE_FEE, MARKET_DAYS, VARIABLE_SERVICE_FEE } from "../config/business";
 
 const FAQS = [
   {
@@ -15,7 +16,7 @@ const FAQS = [
   {
     question: "How much is your service fee?",
     answer:
-      "We go to the market on Tuesdays and Thursdays for a flat service fee of ₦2,500. If you need us to shop on any other day, the service fee ranges from ₦5,000 to ₦10,000, depending on the length of your list. Delivery fee is charged separately.",
+      `We go to the market on ${MARKET_DAYS} for a flat service fee of ${FLAT_SERVICE_FEE}. If you need us to shop outside those days, a higher service fee applies—${VARIABLE_SERVICE_FEE}, depending on the length of your list. Delivery fees are separate.`,
   },
   {
     question: "Why do you charge a service fee?",

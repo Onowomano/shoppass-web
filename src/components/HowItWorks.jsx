@@ -1,5 +1,6 @@
 import { FilePen, MessageCircle, Truck } from 'lucide-react'
 import HIWCard from './HIWCard'
+import { FLAT_SERVICE_FEE, MARKET_DAYS, VARIABLE_SERVICE_FEE } from '../config/business'
 
 const STEPS = [
   {
@@ -12,7 +13,7 @@ const STEPS = [
     icon: <MessageCircle size={24} />,
     title: 'Send It To Us',
     description:
-      "If you're shopping on Tuesday or Thursday, the service fee is a flat ₦2,500. For other days, the fee ranges from ₦5,000–₦10,000, depending on your list.",
+      `If you're shopping on ${MARKET_DAYS}, the service fee is a flat ${FLAT_SERVICE_FEE}. For other days, the fee ranges from ${VARIABLE_SERVICE_FEE}, depending on your list.`,
   },
   {
     icon: <Truck size={24} />,
