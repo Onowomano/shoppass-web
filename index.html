@@ -7,24 +7,60 @@
     <title>Shoppass - Your Personal Food Shopper</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://myshoppass.com/" />
     <meta property="og:title" content="Shoppass - Your Personal Food Shopper" />
-    <meta property="og:description" content="Shoppass is your personal food shopper, delivering fresh produce and groceries right to your doorstep." />
+    <meta
+      property="og:description"
+      content="Shoppass is your personal food shopper, delivering fresh produce and groceries right to your doorstep."
+    />
     <meta property="og:image" content="/og-image.png" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://myshoppass.com/" />
-    <meta name="twitter:title" content="Shoppass - Your Personal Food Shopper" />
-    <meta name="twitter:description" content="Shoppass is your personal food shopper, delivering fresh produce and groceries right to your doorstep." />
+    <meta
+      name="twitter:title"
+      content="Shoppass - Your Personal Food Shopper"
+    />
+    <meta
+      name="twitter:description"
+      content="Shoppass is your personal food shopper, delivering fresh produce and groceries right to your doorstep."
+    />
     <meta name="twitter:image" content="/og-image.png" />
 
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-TQHNCP35");
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-TQHNCP35"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
