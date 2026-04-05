@@ -4,13 +4,53 @@ import WhatsAppIcon from './WhatsAppIcon'
 
 const WHATSAPP_URL = 'http://wa.me/2348080828181'
 
+const STAGES = [
+  { emoji: '🍅', text: 'Getting your tomatoes ready...' },
+  { emoji: ['🌶️', '🫑'], text: 'Checking the peppers...' },
+  { emoji: '🧅', text: 'Slicing the onions...' },
+  { emoji: '🥕', text: 'Almost done...' },
+]
+
+function EmojiLoader() {
+  const [stageIndex, setStageIndex] = useState(0)
+  const [pepperFlip, setPepperFlip] = useState(false)
+
+  // Cycle through stages every 500ms
+  useEffect(() => {
+    const id = setInterval(() => setStageIndex(i => (i + 1) % STAGES.length), 500)
+    return () => clearInterval(id)
+  }, [])
+
+  // Alternate pepper emoji every 200ms when on the pepper stage
+  useEffect(() => {
+    if (stageIndex !== 1) return
+    const id = setInterval(() => setPepperFlip(f => !f), 200)
+    return () => clearInterval(id)
+  }, [stageIndex])
+
+  const stage = STAGES[stageIndex]
+  const emoji = Array.isArray(stage.emoji)
+    ? stage.emoji[pepperFlip ? 1 : 0]
+    : stage.emoji
+
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <span style={{ fontSize: 64, lineHeight: 1 }}>{emoji}</span>
+      <p className="text-body-lg-bold text-text-primary">{stage.text}</p>
+    </div>
+  )
+}
+
 export default function Hero() {
   const [imgLoaded, setImgLoaded] = useState(false)
   const [fontsLoaded, setFontsLoaded] = useState(false)
-  const ready = imgLoaded && fontsLoaded
+  const [minTimeElapsed, setMinTimeElapsed] = useState(false)
+  const ready = imgLoaded && fontsLoaded && minTimeElapsed
 
   useEffect(() => {
     document.fonts.ready.then(() => setFontsLoaded(true))
+    const id = setTimeout(() => setMinTimeElapsed(true), 2600)
+    return () => clearTimeout(id)
   }, [])
 
   return (
@@ -25,7 +65,7 @@ export default function Hero() {
           ready ? 'opacity-0' : 'opacity-100',
         ].join(' ')}
       >
-        <div className="size-10 rounded-full border-4 border-border-primary border-t-icon-accent-orange animate-spin" />
+        <EmojiLoader />
       </div>
 
       {/* Background image */}
