@@ -20,7 +20,7 @@ const WHATSAPP_URL = 'http://wa.me/2348080828181'
  * transparent — no background, white text (for use over dark/image hero sections)
  * filled      — white background, dark text, orange CTA
  */
-export default function Navbar({ variant = 'transparent' }) {
+export default function Navbar({ variant = 'transparent', onOpenSheet }) {
   const isFilled = variant === 'filled'
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -70,8 +70,13 @@ export default function Navbar({ variant = 'transparent' }) {
           <Button
             label="Talk to us"
             leftIcon={<WhatsAppIcon size={20} />}
-            type={isFilled ? 'Filled' : 'Transparent'}
+            type={isFilled ? 'Outline' : 'Transparent'}
             onClick={() => window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer')}
+          />
+          <Button
+            label="Send Shopping List"
+            type="Filled"
+            onClick={onOpenSheet}
           />
         </div>
 
@@ -111,7 +116,7 @@ export default function Navbar({ variant = 'transparent' }) {
               {label}
             </a>
           ))}
-          <div className="flex items-center gap-2 pt-3">
+          <div className="flex flex-wrap items-center gap-2 pt-3">
             <Button
               showLabel={false}
               leftIcon={<InstagramIcon size={20} />}
@@ -122,8 +127,13 @@ export default function Navbar({ variant = 'transparent' }) {
             <Button
               label="Talk to us"
               leftIcon={<WhatsAppIcon size={20} />}
-              type={isFilled ? 'Filled' : 'Transparent'}
+              type={isFilled ? 'Outline' : 'Transparent'}
               onClick={() => { window.open(WHATSAPP_URL, '_blank', 'noopener,noreferrer'); setMenuOpen(false) }}
+            />
+            <Button
+              label="Send Shopping List"
+              type="Filled"
+              onClick={() => { onOpenSheet(); setMenuOpen(false) }}
             />
           </div>
         </div>
